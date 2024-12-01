@@ -1,0 +1,5 @@
+
+
+GET {{host}}/collections
+Content-Type: application/json
+X-TYPESENSE-API-KEY: {{typesenseApiKey}}

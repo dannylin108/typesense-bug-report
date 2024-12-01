@@ -1,0 +1,17 @@
+# now used for local typesense instance on port 8108
+
+version: '3.8'
+
+services:
+  typesense:
+    image: typesense/typesense:27.1
+    volumes:
+    - ./tsData:/data
+    ports:
+      - "8108:8108"
+    environment:
+      - VIRTUAL_HOST=typesense.local
+      - VIRTUAL_PORT=8108
+      - TYPESENSE_DATA_DIR=/data
+    env_file: ./.env #typesense api etc
+    restart: unless-stopped # change to always on prod
